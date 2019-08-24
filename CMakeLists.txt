@@ -14,6 +14,4 @@ endif(DEFINED ENV{GOLDSCRIPT_HOME})
 
 enable_testing()
 
-set(GOLDSCRIPT_SOURCES
-   main.c
-)
+add_subdirectory(src)
