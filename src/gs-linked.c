@@ -1,6 +1,6 @@
 #include "gs-linked.h"
 
-size_t golds_linked_len(gs_linked_t* lst)
+size_t golds_linked_len(golds_linked_t* lst)
 {
     size_t total = 0;
     while(lst != NULL) {
@@ -10,7 +10,7 @@ size_t golds_linked_len(gs_linked_t* lst)
     return total;
 }
 
-void golds_linked_put(gs_linked_t* lst, gs_linked_t* item)
+void golds_linked_put(golds_linked_t* lst, golds_linked_t* item)
 {
     if(lst != NULL) {
         if(lst->next != NULL) {
@@ -23,7 +23,16 @@ void golds_linked_put(gs_linked_t* lst, gs_linked_t* item)
     }
 }
 
-void golds_linked_del(gs_linked_t* lst)
+void golds_linked_append(golds_linked_t* lst, golds_linked_t* item)
+{
+    if(lst == NULL)
+        return;
+    while(lst->next != NULL)
+        lst = lst->next;
+    lst->next = item;
+}
+
+void golds_linked_del(golds_linked_t* lst)
 {
     while(lst != NULL) {
         free(lst);

@@ -41,4 +41,4 @@
 #  define GOLDSCRIPT_HAS_STDINT
 #endif
 
-#endif
+#endif // SRC_GOLDSCIRPT_COMPILER_INFO_H

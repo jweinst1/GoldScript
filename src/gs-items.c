@@ -15,3 +15,8 @@ golds_item_t* golds_item_new(const char* name, double demand, double supply)
 #endif
     return item;
 }
+
+int golds_item_name_eq(const golds_item_t* lfs, const golds_item_t* rfs)
+{
+    return strcmp(lfs->name, rfs->name) == 0;
+}
