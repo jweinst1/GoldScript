@@ -39,4 +39,6 @@ size_t golds_linked_len(gs_linked_t* lst);
 
 void golds_linked_put(gs_linked_t* lst, gs_linked_t* item);
 
+void golds_linked_del(gs_linked_t* lst);
+
 #endif // SRC_GOLDSCRIPT_LINKED_H

@@ -14,7 +14,7 @@ void* golds_mem_malloc(size_t size)
 
 void* golds_mem_calloc(size_t size)
 {
-	void* ptr = calloc(0, size);
+	void* ptr = calloc(1, size);
 	_GOLDSCRIPT_MEM_CHECK(ptr, "goldscript_mem_calloc")
 	return ptr;
 }

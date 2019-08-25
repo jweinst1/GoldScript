@@ -15,3 +15,5 @@ endif(DEFINED ENV{GOLDSCRIPT_HOME})
 enable_testing()
 
 add_subdirectory(src)
+
+add_subdirectory(test)
