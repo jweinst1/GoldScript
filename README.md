@@ -1,2 +1,2 @@
 # GoldScript
-A chemical modeling language for economics
+A chemical programming language
