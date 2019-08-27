@@ -1,6 +1,8 @@
 #ifndef SRC_GOLDSCRIPT_ITEM_H
 #define SRC_GOLDSCRIPT_ITEM_H
 
+#include "gs-memory.h"
+
 #ifndef GOLDSCRIPT_MAX_STR_LEN
 #define GOLDSCRIPT_MAX_STR_LEN 25
 #endif
@@ -27,8 +29,16 @@ struct __gs_item
 {
     golds_item_type_t type;
     golds_item_val_t val;
+    struct __gs_item* next;
 };
 
 typedef struct __gs_item golds_item_t;
+
+#define GOLDSCRIPT_ITEM_HAS_NEXT(it) (it != NULL && it->next != NULL)
+
+golds_item_t* golds_item_new_bool(int boolean);
+golds_item_t* golds_item_new_num(double number);
+golds_item_t* golds_item_new_lst(golds_item_t* insert);
+golds_item_t* golds_item_new_str(const char* text);
 
 #endif // SRC_GOLDSCRIPT_ITEM_H
