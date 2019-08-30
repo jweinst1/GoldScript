@@ -36,6 +36,7 @@ typedef struct __gs_item golds_item_t;
 
 #define GOLDSCRIPT_ITEM_HAS_NEXT(it) (it != NULL && it->next != NULL)
 
+
 golds_item_t* golds_item_new_bool(int boolean);
 golds_item_t* golds_item_new_num(double number);
 golds_item_t* golds_item_new_lst(golds_item_t* insert);

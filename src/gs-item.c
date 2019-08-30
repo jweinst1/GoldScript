@@ -9,6 +9,7 @@ golds_item_t* golds_item_new_bool(int boolean)
     return item;
 }
 
+
 golds_item_t* golds_item_new_num(double number)
 {
     golds_item_t* item = golds_mem_calloc(sizeof(golds_item_t));
@@ -36,7 +37,7 @@ golds_item_t* golds_item_new_str(const char* text)
     for(i=0; i <= GOLDSCRIPT_MAX_STR_LEN && text[i] != '\0'; i++) {
         item->val._string[i] = text[i];
     }
-    val._string[i] = '\0';
+    item->val._string[i] = '\0';
     return item;
 }
 
@@ -63,4 +64,6 @@ golds_item_t* golds_item_new(golds_item_type_t type, void* data)
         case GOLDS_ITEM_TYPE_LST:
             return golds_item_new_lst((golds_item_t*)data);
     }
+    
+    return NULL;
 }

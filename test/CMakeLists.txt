@@ -8,3 +8,7 @@ include_directories(${GOLDSCRIPT_SRC_DIR})
 add_executable(test_golds_memory test_gs-memory.c)
 target_link_libraries(test_golds_memory PUBLIC GoldScripts)
 add_test(test_goldscript_memory test_golds_memory)
+
+add_executable(test_golds_item test_gs-item.c)
+target_link_libraries(test_golds_item PUBLIC GoldScripts)
+add_test(test_goldscript_items test_golds_item)
