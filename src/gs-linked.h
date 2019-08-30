@@ -28,7 +28,7 @@ typedef struct GOLDSCRIPT_LINKED_SYMBOL golds_linked_t;
  */
 typedef int (*golds_linked_check)(const golds_linked_t*);
 
-typedef void (*golds_linked_op)(golds_linked_t*)
+typedef void (*golds_linked_op)(golds_linked_t*);
 
 #define GOLDSCRIPT_LINKED_HAS_NEXT(node) (node->next != NULL)
 
@@ -47,7 +47,7 @@ void golds_linked_put(golds_linked_t* lst, golds_linked_t* item);
 
 void golds_linked_append(golds_linked_t* lst, golds_linked_t* item);
 
-golds_linked_t* golds_linked_find(const golds_linked_t* lst, golds_linked_check fn);
+golds_linked_t* golds_linked_find(golds_linked_t* lst, golds_linked_check fn);
 
 void golds_linked_apply_each(golds_linked_t* lst, golds_linked_op fn);
 

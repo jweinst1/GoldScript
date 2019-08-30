@@ -19,9 +19,24 @@ static void test_golds_mem_alloc(void)
     free(p2);
 }
 
+static void test_golds_mem_new(void)
+{
+    void* p1;
+    size_t len1;
+    size_t cap1;
+    len1 = 0;
+    cap1 = 0;
+    golds_mem_new(10, &p1, &len1, &cap1);
+    CHECK(p1 != NULL);
+    CHECK(len1 == 0);
+    CHECK(cap1 == 10);
+    free(p1);
+}
+
 int main(void)
 {
     test_golds_mem_alloc();
+    test_golds_mem_new();
     return failures ? 3 : 0;
 }
 

@@ -32,7 +32,7 @@ void golds_linked_append(golds_linked_t* lst, golds_linked_t* item)
     lst->next = item;
 }
 
-golds_linked_t* golds_linked_find(const golds_linked_t* lst, golds_linked_check fn)
+golds_linked_t* golds_linked_find(golds_linked_t* lst, golds_linked_check fn)
 {
     while(lst != NULL) {
         if(fn(lst)) {

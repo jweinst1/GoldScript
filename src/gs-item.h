@@ -41,4 +41,10 @@ golds_item_t* golds_item_new_num(double number);
 golds_item_t* golds_item_new_lst(golds_item_t* insert);
 golds_item_t* golds_item_new_str(const char* text);
 
+void golds_item_del(golds_item_t* item);
+/**
+ * @brief Creates an \c item based on a specified type.
+ */
+golds_item_t* golds_item_new(golds_item_type_t type, void* data);
+
 #endif // SRC_GOLDSCRIPT_ITEM_H
