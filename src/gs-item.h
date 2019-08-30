@@ -36,6 +36,7 @@ typedef struct __gs_item golds_item_t;
 
 #define GOLDSCRIPT_ITEM_HAS_NEXT(it) (it != NULL && it->next != NULL)
 
+#define GOLDSCRIPT_ITEM_STR_AT(it, index) (it->val._string[index])
 
 golds_item_t* golds_item_new_bool(int boolean);
 golds_item_t* golds_item_new_num(double number);
