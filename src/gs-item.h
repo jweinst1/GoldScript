@@ -12,16 +12,14 @@ typedef enum
     GOLDS_ITEM_TYPE_BOOL,
     GOLDS_ITEM_TYPE_NUMBER,
     GOLDS_ITEM_TYPE_STR,
-    GOLDS_ITEM_TYPE_LST
+    GOLDS_ITEM_TYPE_LST_RULE,
+    GOLDS_ITEM_TYPE_LST_CMD,
+    GOLDS_ITEM_TYPE_LST_COMP
 } golds_item_type_t;
 
-typedef enum
-{
-    GOLDS_ITEM_CONTEXT_CMD,
-    GOLDS_ITEM_CONTEXT_RULE,
-    GOLDS_ITEM_CONTEXT_COMP,
-    GOLDS_ITEM_CONTEXT_NONE
-} golds_item_ctx;
+#define GOLDSCRIPT_ITEM_TYPE_IS_LST(type) ((type) == GOLDS_ITEM_TYPE_LST_CMD || \
+                                           (type) == GOLDS_ITEM_TYPE_LST_COMP || \
+                                           (type) == GOLDS_ITEM_TYPE_LST_RULE)
 
 struct __gs_item;
 
@@ -37,7 +35,6 @@ struct __gs_item
 {
     golds_item_type_t type;
     golds_item_val_t val;
-    golds_item_ctx ctx;
     struct __gs_item* next;
 };
 
@@ -49,13 +46,8 @@ typedef struct __gs_item golds_item_t;
 
 golds_item_t* golds_item_new_bool(int boolean);
 golds_item_t* golds_item_new_num(double number);
-golds_item_t* golds_item_new_lst(golds_item_t* insert);
+golds_item_t* golds_item_new_lst(golds_item_t* insert, golds_item_type_t kind);
 golds_item_t* golds_item_new_str(const char* text);
-
-golds_item_t* golds_item_cnew_bool(int boolean, golds_item_ctx cont);
-golds_item_t* golds_item_cnew_num(double number, golds_item_ctx cont);
-golds_item_t* golds_item_cnew_lst(golds_item_t* insert, golds_item_ctx cont);
-golds_item_t* golds_item_cnew_str(const char* text, golds_item_ctx cont);
 
 void golds_item_del(golds_item_t* item);
 /**

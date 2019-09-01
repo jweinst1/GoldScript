@@ -21,6 +21,8 @@ typedef struct
                             prs.has_err = 0; \
                             prs.err_mes[0] = '\0'; \
                             prs.data = code
+                            
+
 
 golds_item_t* golds_parse_string(const char* code);
 
